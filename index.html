@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Pattern -->
+    <div class="bg-pattern"></div>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Screen 1: Envelope -->
+        <div id="screen1" class="screen active">
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="images/envelope-card.png" alt="Big Hug Envelope" class="main-img">
+                </div>
+                <h2 class="question-text">Do you want to open it?</h2>
+                <div class="kaomoji">"ヾ(≧▽≦*)o"</div>
+                <div class="button-group">
+                    <button class="btn btn-blue" onclick="nextScreen(2)">Open it</button>
+                    <button class="btn btn-orange" id="noBtn" onmouseover="moveButton(this)" onclick="nextScreen(3)">No
+                        ty</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Welcome -->
+        <div id="screen2" class="screen">
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="images/snoopy-happy.png" alt="Happy Snoopy" class="main-img dance">
+                </div>
+                <h1 class="title-text">Hiiiiiii Aiiiiiii</h1>
+                <div class="kaomoji">(o◕ ‿ ◕o)</div>
+                <p class="instruction-text">Click the next button!! (つ◕ω◕)つ♥</p>
+                <button class="btn btn-blue" onclick="nextScreen(4)">Next!! ^w^</button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Sad/Retry -->
+        <div id="screen3" class="screen">
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="images/snoopy-sad.png" alt="Sad Snoopy" class="main-img">
+                </div>
+                <p class="retry-text">Awh... Let's try again, Please..? >︿<< /p>
+                        <button class="btn btn-blue" onclick="nextScreen(1)">Again..?</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Final Message -->
+        <div id="screen4" class="screen">
+            <div class="card-content message-mode">
+                <h2 class="message-header">Ooo.. A message <br> (ノ◕ω◕)ノ♥ !!</h2>
+                <div class="kaomoji-header">(^○^)</div>
+
+                <div class="message-scroll-area">
+                    <p>omg omg omg HAPPY BIRTHDAY ZASKIA!! 🎉🎂✨ you're officially 16 now bestie!! like fr you're
+                        growing up so fast no cap 😭💕</p>
+
+                    <p>ngl you literally deserve the BEST day ever because you're genuinely one of the most amazing
+                        people i know 🥺 like you're so pretty, so smart, and just overall such a vibe?? 16 looks so
+                        good on you already and we haven't even started yet lmaoo 💅</p>
+
+                    <p>okay but real talk tho.. thank you for being YOU. like genuinely you make everything so much
+                        better just by existing 😌 your energy is unmatched fr fr. you're literally the main character
+                        and today is YOUR day to shine ✨🌟</p>
+
+                    <p>i hope this year brings you everything you've been dreaming of and MORE!! new adventures, good
+                        vibes only, and tons of happiness because that's what you deserve 🫶 let's make 16 the best year
+                        EVER okay?? </p>
+
+                    <p>stay slaying queen, keep being iconic, and never forget how loved you are 👑💖 HAPPY SWEET 16
+                        ZASKIA!! let's goooo!! 🎊🎈🎁</p>
+                </div>
+
+                <button class="btn btn-blue" onclick="nextScreen(5)" style="margin-top: 15px;">See Our Memories
+                    📸✨</button>
+            </div>
+        </div>
+
+        <!-- Screen 5: Photo Gallery -->
+        <div id="screen5" class="screen">
+            <div class="card-content gallery-mode">
+                <h2 class="gallery-header">Our Sweet Memories 💕</h2>
+                <div class="kaomoji-header">(ෆ˙ᵕ˙ෆ)♡</div>
+
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <div class="photo-frame">
+                            <img src="images/kyy/kebersmaan.jpg" alt="Together" class="gallery-photo">
+                        </div>
+                        <div class="photo-caption">us being cute ✨</div>
+                    </div>
+
+                    <div class="photo-item">
+                        <div class="photo-frame">
+                            <img src="images/kyy/papmanyun.jpg" alt="Sweet" class="gallery-photo">
+                        </div>
+                        <div class="photo-caption">prettiest girl ever 💖</div>
+                    </div>
+
+                    <div class="photo-item video-item">
+                        <div class="photo-frame">
+                            <video class="gallery-video" controls>
+                                <source src="images/kyy/photolivesongdewa19.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="photo-caption">vibes!! 🎵</div>
+                    </div>
+                </div>
+
+                <button class="btn btn-blue" onclick="nextScreen(1)" style="margin-top: 15px;">Back to Start ♡</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Bar -->
+    <footer class="bottom-bar">
+        <div class="brand">
+            <img src="images/logo.svg" alt="YouWare" class="brand-logo">
+            <span>YouWare</span>
+        </div>
+        <div class="user-profile">
+            <div class="avatar">Z</div>
+            <span>pretty zaskia ✨</span>
+            <button class="expand-btn">^</button>
+        </div>
+    </footer>
+
+    <!-- Music Control -->
+    <button id="musicBtn" class="music-btn" onclick="toggleMusic()">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <audio id="bgMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-sweet-jazz-shuffle-692.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
