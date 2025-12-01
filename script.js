@@ -20,6 +20,28 @@ function nextScreen(screenNumber) {
             targetScreen.classList.add('active');
         }, 50);
     }
+
+    // Auto-play music on screen 4 (birthday message) and screen 5 (gallery)
+    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+
+    if (screenNumber === 4 || screenNumber === 5) {
+        // Auto-play music
+        if (!isPlaying) {
+            bgMusic.play().catch(e => console.log("Audio play failed:", e));
+            musicBtn.classList.add('music-playing');
+            musicBtn.innerHTML = '<span class="music-icon">⏸️</span>';
+            isPlaying = true;
+        }
+    } else {
+        // Pause music on other screens
+        if (isPlaying) {
+            bgMusic.pause();
+            musicBtn.classList.remove('music-playing');
+            musicBtn.innerHTML = '<span class="music-icon">🎵</span>';
+            isPlaying = false;
+        }
+    }
 }
 
 // ==================== NO BUTTON EVASION ====================
