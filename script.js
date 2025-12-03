@@ -89,5 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==================== MOBILE TOUCH ENHANCEMENTS ====================
+    // Improve touch performance with passive listeners for better scroll
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('touchstart', function (e) {
+            this.style.transform = 'scale(0.95)';
+        }, { passive: true });
+
+        btn.addEventListener('touchend', function (e) {
+            this.style.transform = 'scale(1)';
+        }, { passive: true });
+    });
+
+    // Ensure playsinline is set via JS for iOS compatibility
+    document.querySelectorAll('.gallery-video').forEach(video => {
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', ''); // Old iOS
+    });
+
     console.log("Snoopy Website Initialized! 🐶");
 });
