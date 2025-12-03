@@ -65,6 +65,8 @@ body {
     max-width: 400px;
     height: auto;
     min-height: 500px;
+    max-height: 90vh;
+    /* Prevent overflow on mobile */
     background: white;
     border: 2px dashed var(--border-color);
     border-radius: 20px;
@@ -238,8 +240,12 @@ h2 {
 /* ==================== GALLERY SCREEN ==================== */
 .gallery-mode {
     height: 100%;
+    max-height: 100%;
+    /* Constrain to parent */
     justify-content: flex-start;
     overflow-y: auto;
+    padding-bottom: 10px;
+    /* Extra space at bottom */
 }
 
 .gallery-header {
@@ -413,7 +419,8 @@ h2 {
 @media (max-width: 480px) {
     .screen {
         max-width: 90%;
-        min-height: 450px;
+        min-height: 400px;  /* Reduced for mobile */
+        max-height: 85vh;   /* Fit in viewport */
     }
 
     .title-text {
