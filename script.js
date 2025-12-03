@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const noBtn = document.getElementById('noBtn');
     if (noBtn) {
         noBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Prevent click
+            // Don't preventDefault - allow scrolling
             const x = Math.random() * 150 - 75;
             const y = Math.random() * 150 - 75;
             noBtn.style.transform = `translate(${x}px, ${y}px)`;
