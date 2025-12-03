@@ -21,11 +21,11 @@ function nextScreen(screenNumber) {
         }, 50);
     }
 
-    // Auto-play music on screen 4 (birthday message) and screen 5 (gallery)
+    // Auto-play music on screen 4 (birthday message) only
     const bgMusic = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
 
-    if (screenNumber === 4 || screenNumber === 5) {
+    if (screenNumber === 4) {
         // Auto-play music
         if (!isPlaying) {
             bgMusic.play().catch(e => console.log("Audio play failed:", e));
